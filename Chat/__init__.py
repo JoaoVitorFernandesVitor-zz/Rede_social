@@ -1,9 +1,6 @@
 from tkinter import *
-Chat_dados = {'Yuki':{'mensage_for_IA' :[
-    ['Yuki','->Hi'],
-    ['IA','->Helo']
-]
-}}
+from Chat_Bank import *
+
 class Chat(Frame):
     def __init__(self,user):
         super().__init__()
@@ -18,10 +15,12 @@ class Chat(Frame):
             text_chat.insert(END,text_send)
             try:
                 Chat_dados[user]['mensage_for_IA'] += [user,f'->{entry_chat.get()}']
-                
+                Add_mensage()
+
             except:
                 Chat_dados[user] = {'mensage_for_IA': []}
             text_chat['state'] = DISABLED
+            entry_chat.delete(0, END)
             
         
         #Widgets internos
@@ -37,9 +36,7 @@ class Chat(Frame):
         send_button.grid(row = 2, column = 1 , ipadx = 5 , ipady = 5 , sticky = W+E)
 
         text_chat['state'] = NORMAL
-        for item in  Chat_dados[user]['mensage_for_IA']:
-            if item[0] == user:
-                text_chat.insert(END,f'{item[0]}{item[1]}\n'.replace("'",'').replace(']',"").replace('[','').replace(',',''))
-            else:
-                continue
+        for item in Chat_dados[user]['mensage_for_IA']:
+            text_chat.insert(END,f'{item[0]}{item[1]}\n'.replace("'",'').replace(']',"").replace('[','').replace(',',''))
+
         text_chat['state'] = DISABLED

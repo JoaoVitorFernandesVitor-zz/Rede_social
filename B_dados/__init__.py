@@ -1,11 +1,15 @@
 import json 
 #Cria o Banco de dados em .json
-def Create():
+def Create_B_dados():
     try :
         B_dados ={
         'Yuki':
             {'senha': '1234',
-             'privileges' : 'adm'}
+             'privileges' : 'adm',
+             'idade': '19',
+             'sexo': 'Masculino',
+             'profissao': 'Desenvolvedor',
+             'status_civil': 'Solteiro'}
 
         }
         a = json.dumps(B_dados, indent = True)
@@ -31,9 +35,10 @@ try:
     open('B_dados.json', 'r')
 
 except(FileNotFoundError):
-    Create()
+    Create_B_dados()
 
 #Cria o dicionario do banco de dados
 with open('B_dados.json', 'r') as file :
     texto = file.read()
 B_dados = json.loads(texto)
+
