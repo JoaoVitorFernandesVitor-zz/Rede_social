@@ -1,14 +1,34 @@
 {
  "Yuki": {
-  "mensage_for_IA": [
-   [
-    "Yuki",
-    "->Hi"
+  "contatos": {
+   "IA": [
+    [
+     "Yuki",
+     "->Hi"
+    ],
+    [
+     "IA",
+     "->Helo"
+    ],
+    [
+     "Yuki",
+     "->como voce esta"
+    ],
+    [
+     "Yuki",
+     "->?"
+    ]
    ],
-   [
-    "IA",
-    "->Helo"
+   "Igor": [
+    [
+     "Yuki",
+     "->ola"
+    ],
+    [
+     "Yuki",
+     "->ola"
+    ]
    ]
-  ]
+  }
  }
 }

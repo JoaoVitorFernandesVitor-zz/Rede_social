@@ -2,10 +2,11 @@ import json
 
 def Create_Chat_dados():
     try:
-        Chat_dados = {'Yuki':{'mensage_for_IA' :[
+        Chat_dados = {'Yuki': {'contatos': {'IA' : [
     ['Yuki','->Hi'],
     ['IA','->Helo']
-    ]}
+    ]
+    }}
     }
 
         a = json.dumps(Chat_dados, indent = True)
@@ -17,6 +18,10 @@ def Create_Chat_dados():
     except:
         print("Não foi possivel Criar o arquivo Chat_dados.json")
 
+def Add_contact(user,new_contato):
+    Chat_dados[user]['contatos'][new_contato] = []
+    print(Chat_dados)
+    
 def Add_mensage():
     try:
         news_dados = json.dumps(Chat_dados, indent = True) 
