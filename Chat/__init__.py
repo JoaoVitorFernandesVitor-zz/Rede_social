@@ -26,8 +26,8 @@ class Chat(Frame):
             self.destroy()
     
         #Widgets internos
-        title_chat = Label(self, text = 'Fon Chat' , font = 'System 20' , bg = '#02e0a6')
-        text_chat = Text(self,bg = '#79d9c0' , width = 60, state = DISABLED , bd = 5, relief = GROOVE) 
+        title_chat = Label(self, text = contato, font = 'System 20' , bg = '#02e0a6')
+        text_chat = Text(self,bg = '#79d9c0' , width = 37, height = 10, font = 'Arial 14',  state = DISABLED , bd = 5, relief = GROOVE) 
         entry_chat = Entry(self,bg = '#66b39f' , bd = 4 , relief = RIDGE)
         send_button = Button(self, text = 'Send', bg = '#02e0a6', bd = 5,  command = Send)
         return_button = Button(self, text = '<',bg = '#02e0a6', bd = 5, command = Return)
@@ -41,5 +41,5 @@ class Chat(Frame):
         text_chat['state'] = NORMAL
         for item in Chat_dados[user]['contatos'][f'{contato}']:
             text_chat.insert(END,f'{item[0]}{item[1]}\n'.replace("'",'').replace(']',"").replace('[','').replace(',',''))
-
+           
         text_chat['state'] = DISABLED
